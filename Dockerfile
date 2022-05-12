@@ -5,7 +5,7 @@ FROM nginx:1.19.8-alpine
 RUN cat /etc/os-release | grep PRETTY_NAME && nginx -v
 
 # build arguments
-ARG timezone="America/Santiago"
+ARG timezone="America/Sao_Paulo"
 
 # packages
 RUN apk update && apk add --no-cache \
@@ -27,7 +27,8 @@ RUN apk update && apk add --no-cache \
 	php7-openssl \
 	php7-pdo \
 	php7-pdo_mysql \
-	php7-pdo_pgsql
+	php7-pdo_pgsql \
+	php7-pdo_sqlite \
 	php7-phar \
 	php7-psr \
 	php7-opcache \
